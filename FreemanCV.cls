@@ -198,10 +198,9 @@
 	\expandafter\ifstrequal\expandafter{#4}{}{\\}{\\[5pt]} % Conditional insertion of whitespace if the 4th parameter has any content in it
 }
 
-\newcommand{\devproject}[5]{
-	\expandafter\ifstrequal\expandafter{#3}{}{}{{\raggedright\large #3}\\} % Employer
-	\expandafter\ifstrequal\expandafter{#4}{}{}{{\raggedright\large\textit{\textbf{#4}}}\\[4pt]} % Job title
-	\expandafter\ifstrequal\expandafter{#5}{}{}{#5} % Description
+\newcommand{\devproject}[3]{
+	{\large{\textbf{#1}\expandafter\ifstrequal\expandafter\textbf{#2}{}{}{\hspace{6pt}\small{(#2)}}}\par} % Duration and conditional full time/part time text
+	\expandafter\ifstrequal\expandafter{#3}{}{}{#3} % Description
 	\medskip % Vertical whitespace
 }
 
