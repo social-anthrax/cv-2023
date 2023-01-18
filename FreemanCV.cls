@@ -36,6 +36,7 @@
 \setlength{\parindent}{0pt} % Paragraph indentation
 
 \usepackage{supertabular} % Required for the supertabular environment which allows tables to span multiple pages so sections with tables correctly wrap across pages
+\usepackage{tabularx}
 
 \usepackage{extsizes} % Allows using more default font sizes as a class option
 
@@ -47,10 +48,10 @@
 
 \usepackage[
 	a4paper, % Paper size
-	top=1.75cm, % Top margin
-	bottom=1.75cm, % Bottom margin
-	left=1.5cm, % Left margin
-	right=1.5cm, % Right margin
+	top=1.5cm, % Top margin
+	bottom=1.5cm, % Bottom margin
+	left=1.3cm, % Left margin
+	right=1.3cm, % Right margin
 	footskip=1cm, % Space from the bottom margin to the baseline of the footer
 	headsep=0.5cm, % Space from the top margin to the baseline of the header
 	headheight=1cm, % Height of the header
@@ -171,8 +172,7 @@
 
 % Command for adding a new job entry (work experience)
 \newcommand{\jobentry}[5]{
-	{\raggedleft\textsc{#1\expandafter\ifstrequal\expandafter{#2}{}{}{\hspace{6pt}\footnotesize{(#2)}}}\par} % Duration and conditional full time/part time text
-	\expandafter\ifstrequal\expandafter{#3}{}{}{{\raggedright\large #3}\\} % Employer
+	{\large #3 \hfill\textsc{#1\expandafter\ifstrequal\expandafter{#2}{}{}{\hspace{6pt}\footnotesize{(#2)}}}\par} % Duration and conditional full time/part time text
 	\expandafter\ifstrequal\expandafter{#4}{}{}{{\raggedright\large\textit{\textbf{#4}}}\\[4pt]} % Job title
 	\expandafter\ifstrequal\expandafter{#5}{}{}{#5} % Description
 	\medskip % Vertical whitespace
@@ -180,8 +180,7 @@
 
 % Command for entering a new qualification (education)
 \newcommand{\qualificationentry}[6]{
-	{\raggedleft\textsc{#1{\hspace{6pt}}}\\} % Duration 
-	\expandafter\ifstrequal\expandafter{#2}{}{}{ \textbf{#2}\\} % Duration and degree
+	{{\textbf{#2}}\hfill\textsc{#1}\par}
 	\expandafter\ifstrequal\expandafter{#3}{}{}{ {\small\textsc{#3}}\\} % Honors, achievements or distinctions (e.g. first class honors)
 	\expandafter\ifstrequal\expandafter{#4}{}{}{ #4\\} % Department
 	\expandafter\ifstrequal\expandafter{#5}{}{}{ \textit{#5}\\} % Institution
@@ -202,14 +201,13 @@
 }
 
 \newcommand{\devproject}[3]{
-	{\large{\textbf{#1}\expandafter\ifstrequal\expandafter\textbf{#2}{}{}{\hspace{6pt}\small{(#2)}}}\par} % Duration and conditional full time/part time text
+	{{\large{\textbf{#1}}}\hfill\textsc{#2}\par}
 	\expandafter\ifstrequal\expandafter{#3}{}{}{#3} % Description
 	\medskip % Vertical whitespace
 }
 
 \newcommand{\extracurricularentry}[4]{
-	{\raggedleft\textsc{#1{\hspace{6pt}}}\\} % Duration 
-	\expandafter\ifstrequal\expandafter{#2}{}{}{{\raggedright\large #2}\\} % Society name
+	{{\large#2}\hfill\textsc{#1}\par}
 	\expandafter\ifstrequal\expandafter{#3}{}{}{{\raggedright\large\textit{\textbf{#3}}}\\[4pt]} % Job title
 	\expandafter\ifstrequal\expandafter{#4}{}{}{#4} % Description
 	\medskip % Vertical whitespace
