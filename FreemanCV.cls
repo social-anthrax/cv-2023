@@ -180,11 +180,11 @@
 
 % Command for entering a new qualification (education)
 \newcommand{\qualificationentry}[6]{
-	{{\textbf{#2}}\hfill\textsc{#1}\par}
-	\expandafter\ifstrequal\expandafter{#3}{}{}{ {\small\textsc{#3}}\\} % Honors, achievements or distinctions (e.g. first class honors)
+	{{\large{#5}}\hfill\textsc{#1}\par}
 	\expandafter\ifstrequal\expandafter{#4}{}{}{ #4\\} % Department
-	\expandafter\ifstrequal\expandafter{#5}{}{}{ \textit{#5}\\} % Institution
-	\expandafter\ifstrequal\expandafter{#6}{}{}{ #6 } % Institution
+	\expandafter\ifstrequal\expandafter{#2}{}{}{ \large\textbf{\textit{#2}}\\} % Institution
+	\expandafter\ifstrequal\expandafter{#3}{}{}{ {\small\textsc{#3}}\\} % Honors, achievements or distinctions (e.g. first class honors)
+	\expandafter\ifstrequal\expandafter{#6}{}{}{#6} % Institution
 	\medskip
 }
 
