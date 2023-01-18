@@ -179,11 +179,14 @@
 }
 
 % Command for entering a new qualification (education)
-\newcommand{\qualificationentry}[5]{
-	\textsc{#1} & \textbf{#2}\\ % Duration and degree
-	\expandafter\ifstrequal\expandafter{#3}{}{}{& {\small\textsc{#3}}\\} % Honors, achievements or distinctions (e.g. first class honors)
-	\expandafter\ifstrequal\expandafter{#4}{}{}{& #4\\} % Department
-	\expandafter\ifstrequal\expandafter{#5}{}{}{& \textit{#5}\\[5pt]} % Institution
+\newcommand{\qualificationentry}[6]{
+	{\raggedleft\textsc{#1{\hspace{6pt}}}\\} % Duration 
+	\expandafter\ifstrequal\expandafter{#2}{}{}{ \textbf{#2}\\} % Duration and degree
+	\expandafter\ifstrequal\expandafter{#3}{}{}{ {\small\textsc{#3}}\\} % Honors, achievements or distinctions (e.g. first class honors)
+	\expandafter\ifstrequal\expandafter{#4}{}{}{ #4\\} % Department
+	\expandafter\ifstrequal\expandafter{#5}{}{}{ \textit{#5}\\} % Institution
+	\expandafter\ifstrequal\expandafter{#6}{}{}{ #6 } % Institution
+	\medskip
 }
 
 % Command for entering a separate table row -- used for any section that uses a two column table for alignment
