@@ -49,7 +49,7 @@
 \usepackage[
 	a4paper, % Paper size
 	top=1.5cm, % Top margin
-	bottom=1.5cm, % Bottom margin
+	bottom=.8cm, % Bottom margin
 	left=1.3cm, % Left margin
 	right=1.3cm, % Right margin
 	footskip=1cm, % Space from the bottom margin to the baseline of the footer
